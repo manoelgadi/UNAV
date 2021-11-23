@@ -39,9 +39,10 @@ print(encripta_cesar("Master de Regulacion y Banca - UNAV",3))
 # print("z",letra_rota("z",semilla=8))
 
 # Ejercicio - una función para desencriptar:
-def desencripta_cesar():
-    pass
+#def desencripta_cesar():
+#    pass
 
-desencripta_cesar("Pdvwhu#gh#Uhjxodflrq#B#Edqfd#0#XQDY",3)
+#desencripta_cesar("Pdvwhu#gh#Uhjxodflrq#B#Edqfd#0#XQDY",3)
 
+lo_que_hay_que_hacer = """YDLuIJywqH0IErHu0Bq0BuO0tu0FHEJussyED0tu0tqJE0O0WT`b<0zKIJyvysqH0FEHGKu0JuDuyI0GKu0CuzEHqH0uB0qBwEHyJCE0tu0suIqH>0`HuFqHqH0KDq0FHuIuDJqsyED0tu0A@0CyDKJEI0KIqDtE0`EMuH`EyDJ0O0`OJxED>0"""
 
