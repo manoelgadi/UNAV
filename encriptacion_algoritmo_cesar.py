@@ -5,26 +5,43 @@ Spyder Editor
 ALGORITMO DE CESAR
 """
 
-def letra_rota(letra):
+def letra_rota(letra,semilla=1):
     """ Devuelve la letra mas uno. Input: una letra """
-    num = ord(letra) - 65
-    num = (num + 1) % 26 # Este el algoritimo de cesar
-    num = num + 65
+    num = ord(letra) + semilla
+    if(num >122):
+        num = num - 58 # Este el algoritimo de cesar
     return(chr(num))
 
-
-msg_original = "Master de Regulacion y Banca - UNAV 2021"
-
-msg_encriptado = "Nbtuf" # la semilla es 1
-
-print(help(letra_rota))
-print("A",letra_rota("A"))
-print("B",letra_rota("B"))
-print("Y",letra_rota("Y"))
-print("Z",letra_rota("Z"))
-print("a",letra_rota("a"))
-print("b",letra_rota("b"))
+def encripta_cesar(msg_original,semilla=1):
+    """ Encripta un texto usando algoritmo de cesar. """
+    msg_encriptado = "" # la semilla es 1
+    
+    for caracter in msg_original:
+    #    print(caracter,letra_rota(caracter,2))
+        msg_encriptado = msg_encriptado + letra_rota(caracter,semilla)
+    return(msg_encriptado)
+    
 
 
+
+print("Master de Regulacion y Banca - UNAV")
+
+print(encripta_cesar("Master de Regulacion y Banca - UNAV",3))
+
+    
+# print(help(letra_rota))
+# print("A",letra_rota("A"))
+# print("B",letra_rota("B"))
+# print("Y",letra_rota("Y",4))
+# print("Z",letra_rota("Z",5))
+# print("a",letra_rota("a",6))
+# print("b",letra_rota("b",semilla=7))
+# print("z",letra_rota("z",semilla=8))
+
+# Ejercicio - una función para desencriptar:
+def desencripta_cesar():
+    pass
+
+desencripta_cesar("Pdvwhu#gh#Uhjxodflrq#B#Edqfd#0#XQDY",3)
 
 
