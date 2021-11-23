@@ -26,9 +26,15 @@ def encripta_cesar(msg_original,semilla=1):
 
 print("Master de Regulacion y Banca - UNAV")
 
-print(encripta_cesar("Master de Regulacion y Banca - UNAV",3))
+print(encripta_cesar("""
+Desencryptar ficheros encriptados con algoritmo de cesar
+Encriptar usando mensaje secreta escondida en los ficheros (algoritmo mejorado con linear congruencia y reverso para  desencriptación.
+Investigar sobre la leí de protección de datos, especialmente en lo que se refiere a necesidad de encryptacion de datos sensibles.
+Hacer una presentación en grupo de 10 minutos (1) enseñando como habeis desencriptado y (2) vuelto a encriptar usando la encriptación mejorada, (3) finalmente, comentar sobre la leí de protección de datos y encryptación de datos sensibles (que datos son los sensibles y que tipo de encryptación se recomiendan). """,16))
 
-    
+# referencias: https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/    
+# https://stackoverflow.com/questions/2911432/reversible-pseudo-random-sequence-generator
+
 # print(help(letra_rota))
 # print("A",letra_rota("A"))
 # print("B",letra_rota("B"))
@@ -39,24 +45,9 @@ print(encripta_cesar("Master de Regulacion y Banca - UNAV",3))
 # print("z",letra_rota("z",semilla=8))
 
 # Ejercicio - una función para desencriptar:
-#def desencripta_cesar():
-#    pass
+# def desencripta_cesar():
+#     pass
 
-#desencripta_cesar("Pdvwhu#gh#Uhjxodflrq#B#Edqfd#0#XQDY",3)
-
-lo_que_hay_que_hacer = """TuIuDsHOFJqH0vysxuHEI0uDsHyFJqtEI0sED0qBwEHyJCE0tu0suIqHUDsHyFJqH0KIqDtE0CuDIqzu0IusHuJq0uIsEDtytq0uD0BEI0vysxuHEI08qBwEHyJCE0CuzEHqtE0sED0ByDuqH0sEDwHKuDsyq0O0HuLuHIE0FqHq00tuIuDsHyFJqsyÉD>YDLuIJywqH0IErHu0Bq0BuÃ0tu0FHEJussyÉD0tu0tqJEI<0uIFusyqBCuDJu0uD0BE0GKu0Iu0HuvyuHu0q0DusuIytqt0tu0uDsHOFJqsyED0tu0tqJEI0IuDIyrBuI>XqsuH0KDq0FHuIuDJqsyÉD0uD0wHKFE0tu0A@0CyDKJEI08A90uDIuÇqDtE0sECE0xqruyI0tuIuDsHyFJqtE0O08B90LKuBJE0q0uDsHyFJqH0KIqDtE0Bq0uDsHyFJqsyÉD0CuzEHqtq<08C90vyDqBCuDJu<0sECuDJqH0IErHu0Bq0BuÃ0tu0FHEJussyÉD0tu0tqJEI0O0uDsHOFJqsyÉD0tu0tqJEI0IuDIyrBuI08GKu0tqJEI0IED0BEI0IuDIyrBuI0O0GKu0JyFE0tu0uDsHOFJqsyÉD0Iu0HusECyuDtqD9>0"""
-# referencias: https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/    
-# https://stackoverflow.com/questions/2911432/reversible-pseudo-random-sequence-generator
-
-"""
-Method of linear congruences
-Given an initial number , known as seed, the number of the sequence x1 is given by
-x1=(ax0+b) mod (m). In general form, the xi+1 number is obtaining from the previous number xiusing
-the formula xi+1=(axi+b) mod (m). mod is the modulo operator1
-For example, for a = 7, b = 1, m = 13 and x0=3, the sequence of numbers generated is: 9, 12, 7,
-11, 0, 1, 8, 5, 10, 6, 4, 3, 9, ...
-In this IPE, you must use as parameters the values a=231, b=1 e m=50, which are used
-by known systems
-"""
+# desencripta_cesar("Pdvwhu#gh#Uhjxodflrq#B#Edqfd#0#XQDY",3)
 
 
