@@ -50,8 +50,8 @@ Hacer una presentación en grupo de 10 minutos (1) enseñando como habeis desenc
 
 # desencripta_cesar("Pdvwhu#gh#Uhjxodflrq#B#Edqfd#0#XQDY",3)
 
-
-def random_number_and_choice(xi):
+# UTILIZAR ESTE CODIGO SIEMPRE QUE NECESITEIS UNA NUEVA SEMILLA (PARA CADA LETRA)
+def linear_congruence(xi):
     """ Function to calculate a random number and a random choice 
         using the linear congruences method 
             input: seed as integer
@@ -61,10 +61,8 @@ def random_number_and_choice(xi):
     """
     a, b, m = 2491, 1, 58
     xi_plus_1 = (a * xi + b) % m
-    if xi_plus_1 <= 2**31 :
-        comp_move = 0
-    else :
-        comp_move = 1
-    return comp_move, xi_plus_1
+    return xi_plus_1
+
+# BONUS - CREAR LA FUNCION linear_congruence_inversa y UTILIZAR ESTE CODIGO SIEMPRE QUE NECESITEIS UNA NUEVA SEMILLA PARA DESENCRIPTAR (PARA CADA LETRA)
 
 
