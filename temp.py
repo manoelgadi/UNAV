@@ -34,3 +34,42 @@ class BalanceSheet(db.Model):
     p49100_Profit_h1 = db.Column(db.Float)
     p49100_Profit_h2 = db.Column(db.Float)
     detailed_status = db.Column(db.String(150))
+    
+
+
+# BOOTSTRAP (JavaScript Framework to make the web pretty)
+from flask_bootstrap import Bootstrap
+Bootstrap(app)
+
+# FLASK - WTForms!
+from flask_wtf import FlaskForm
+from wtforms import StringField#, PasswordField, BooleanField, SelectField
+from wtforms.validators import  DataRequired#, InputRequired, Length, Email, EqualTo,
+
+class SearchForm(FlaskForm):
+  name = StringField('Type the name of the company you want to see data: ', validators=[DataRequired()])
+
+
+@app.route('/', methods=['GET','POST']) #añadido ,methods=['GET','POST']
+def index():
+    form=SearchForm()
+
+
+    if request.method == 'POST':
+        companies=BalanceSheet.query.filter(BalanceSheet.company_name.contains(form.name.data)).all()
+        result = True
+
+    else:
+        companies= BalanceSheet.query.filter(BalanceSheet.id>=0).limit(40).all()
+        result = False
+
+    entries=[]
+    for ticker in BalanceSheet.query.filter(BalanceSheet.id>=0).all():
+        entries+=[(ticker.company_name)]
+    return render_template('index.html',module='home', rows=companies, form=form, entries=entries, result = result)
+
+
+
+import pandas as pd
+pd.set_option('display.float_format', lambda x: '%.3f' % x)
+df = pd.read_sql("""SELECT * FROM balance_sheet;""", conn)
